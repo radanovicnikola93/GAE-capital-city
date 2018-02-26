@@ -9,10 +9,14 @@
 <body>
     <fieldset>
         <legend><h1>Result</h1></legend>
-
+        {% if result %}
+        <p>Your answer is correct. {{ i.capital }} is the capital of {{ i.country }}</p>
+        {% else %}
+        <p>Your answer in not correct! {{ i.capital }} is the capital of {{ i.county }}</p>
+        {% endif %}
     </fieldset>
     <br>
 
-    <a href="/">Would you like to guess again?</a>
+    <a href="/">Would you like to play again?</a>
 </body>
 </html>
