@@ -29,7 +29,7 @@ class BaseHandler(webapp2.RequestHandler):
 class Capital(object):
     def __init__(self, country, capital, img):
         self.country = country
-        self.capital = capital,
+        self.capital = capital
         self.img = img
 
 def content():
