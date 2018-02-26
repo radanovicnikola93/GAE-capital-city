@@ -10,15 +10,14 @@
 
     <fieldset>
         <legend><h1>Capital city</h1></legend>
-        <img src="{{ capital.image }}" alt="" width="400px">
+        <img src="{{ capital.img }}" alt="" width="400px">
         <p>What is the capital of {{ capital.country }}?</p>
-    </fieldset>
-
-    <form action="/result" method="post">
-        <p>Answer</p>
+        <br>
+        <form action="/result" method="post">
         <input type="text" name="answer">
         <button>Answer</button>
     </form>
+    </fieldset>
 
 </body>
 </html>
