@@ -44,7 +44,7 @@ def content():
     br = Capital(country='Germany', capital='Berlin', img='/assets/img/br.jpg')
     pr = Capital(country='France', capital='Paris', img='/assets/img/pr.jpg')
 
-
+    return [lj, zg, bg, sr, pg, at, rm, vi, br, pr]
 class MainHandler(BaseHandler):
     def get(self):
         capital = content()[random.randint(0,9)]
@@ -52,8 +52,26 @@ class MainHandler(BaseHandler):
 
         return self.render_template("index.html", params=params)
 
+class ResultHandler(BaseHandler):
+    def post(self):
+        answer = self.request.get('answer')
+        country = self.request.get('country')
+
+        capitals = content()
+        for i in capitals:
+            if i.country == country:
+                if i.capital.lower() == answer.lower():
+                    result = True
+                else:
+                    result = False
+
+                params = {'result': result, 'i': i}
+
+                return self.render_template('result.html', params=params)
+
 
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
+    webapp2.Route('/result', ResultHandler)
 ], debug=True)
