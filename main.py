@@ -45,6 +45,7 @@ def content():
     pr = Capital(country='France', capital='Paris', img='/assets/img/pr.jpg')
 
     return [lj, zg, bg, sr, pg, at, rm, vi, br, pr]
+
 class MainHandler(BaseHandler):
     def get(self):
         capital = content()[random.randint(0,9)]

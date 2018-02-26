@@ -8,12 +8,16 @@
 </head>
 <body>
 
-    <form method="post">
-        <fieldset>
-            <legend><h1>Capital city</h1></legend>
+    <fieldset>
+        <legend><h1>Capital city</h1></legend>
+        <img src="{{ capital.image }}" alt="" width="400px">
+        <p>What is the capital of {{ capital.country }}?</p>
+    </fieldset>
 
-            <button class="button">Guess!</button>
-        </fieldset>
+    <form action="/result" method="post">
+        <p>Answer</p>
+        <input type="text" name="answer">
+        <button>Answer</button>
     </form>
 
 </body>
