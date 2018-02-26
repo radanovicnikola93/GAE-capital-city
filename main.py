@@ -25,29 +25,18 @@ class BaseHandler(webapp2.RequestHandler):
         template = jinja_env.get_template(view_filename)
         return self.response.out.write(template.render(params))
 
+class Capital(object):
+    def __init__(self, country, capital, img):
+        self.country = country
+        self.capital = capital,
+        self.img = img
+
+
 class MainHandler(BaseHandler):
     def get(self):
         return self.render_template("index.html")
 
-    def post(self):
-        first_num = float(self.request.get("first-num"))
-        second_num = float(self.request.get("second-num"))
-        operation = self.request.get("operation")
 
-        result = None
-
-        if operation == "+":
-            result = first_num + second_num
-        elif operation == "-":
-            result = first_num - second_num
-        elif operation == "*":
-            result = first_num * second_num
-        elif operation == "/":
-            result = first_num / second_num
-
-        params = {'result': result}
-
-        return self.render_template('result.html', params=params)
 
 app = webapp2.WSGIApplication([
     webapp2.Route('/', MainHandler),
