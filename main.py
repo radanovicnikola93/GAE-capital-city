@@ -2,6 +2,7 @@
 import os
 import jinja2
 import webapp2
+import random
 
 template_dir = os.path.join(os.path.dirname(__file__), "templates")
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=False)
@@ -46,7 +47,10 @@ def content():
 
 class MainHandler(BaseHandler):
     def get(self):
-        return self.render_template("index.html")
+        capital = content()[random.randint(0,9)]
+        params = {'capital': capital}
+
+        return self.render_template("index.html", params=params)
 
 
 
