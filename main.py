@@ -31,6 +31,18 @@ class Capital(object):
         self.capital = capital,
         self.img = img
 
+def content():
+    lj = Capital(country='Slovenia', capital='Ljubljana', img='/assets/img/lj.jpg')
+    zg = Capital(country='Croatia', capital='Zagreb', img='/assets/img/zg.jpg')
+    bg = Capital(country='Serbia', capital='Belgrade', img='/assets/img/bg.jpg')
+    sr = Capital(country='Bosnia and Hercegovina', capital='Sarajevo', img='/assets/img/sr.jpg')
+    pg = Capital(country='Montenegro', capital='Podgorica', img='/assets/img/pg.jpg')
+    at = Capital(country='Greece', capital='Athens', img='/assets/img/at.jpg')
+    rm = Capital(country='Italy', capital='Rome', img='/assets/img/rm.jpg')
+    vi = Capital(country='Austria', capital='Vienna', img='/assets/img/vi.jpg')
+    br = Capital(country='Germany', capital='Berlin', img='/assets/img/br.jpg')
+    pr = Capital(country='France', capital='Paris', img='/assets/img/pr.jpg')
+
 
 class MainHandler(BaseHandler):
     def get(self):
